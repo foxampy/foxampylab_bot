@@ -1,22 +1,6 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "mini-app/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/mini-app/$1"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "regions": ["fra1"]
+  "framework": "vite",
+  "installCommand": "cd mini-app && npm install",
+  "buildCommand": "cd mini-app && npm run build",
+  "outputDirectory": "mini-app/dist"
 }
