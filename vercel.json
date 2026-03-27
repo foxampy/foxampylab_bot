@@ -1,5 +1,6 @@
 {
-  "installCommand": "cd mini-app && npm install",
-  "buildCommand": "cd mini-app && npm run build",
-  "outputDirectory": "mini-app/dist"
+  "framework": "vite",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }
