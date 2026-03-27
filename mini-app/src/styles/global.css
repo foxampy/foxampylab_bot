@@ -1,0 +1,281 @@
+/* ============================================
+   TELEGRAM MINI APP STYLES
+   Стиль в духе проекта Foxampy - dark theme,
+   неоновые акценты, pixel art эстетика
+   ============================================ */
+
+:root {
+  /* Цветовая палитра */
+  --color-bg: #050505;
+  --color-bg-secondary: #0a0a0a;
+  --color-bg-card: rgba(0, 0, 0, 0.4);
+  --color-bg-card-hover: rgba(0, 0, 0, 0.6);
+  
+  /* Границы */
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-hover: rgba(255, 255, 255, 0.2);
+  --color-border-active: rgba(34, 211, 238, 0.5);
+  
+  /* Текст */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-text-muted: rgba(255, 255, 255, 0.4);
+  
+  /* Акценты */
+  --color-accent: #22d3ee; /* cyan-400 */
+  --color-accent-hover: #06b6d4; /* cyan-500 */
+  --color-accent-glow: rgba(34, 211, 238, 0.3);
+  
+  /* Статусы */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+  
+  /* Градиенты */
+  --gradient-primary: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+  --gradient-glow: linear-gradient(135deg, rgba(34, 211, 238, 0.3) 0%, rgba(59, 130, 246, 0.3) 100%);
+  
+  /* Шрифты */
+  --font-mono: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Размеры */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  
+  /* Тени */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px var(--color-accent-glow);
+  
+  /* Анимации */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Фон с градиентом */
+.app-background {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, #0a0a0a, #050505, #0a0a0a);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Контейнер */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Утилиты */
+.text-mono {
+  font-family: var(--font-mono);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+/* Кнопки */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+}
+
+.btn:hover {
+  border-color: var(--color-border-hover);
+  background: var(--color-bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  border-color: var(--color-accent);
+  background: rgba(34, 211, 238, 0.1);
+  color: var(--color-accent);
+}
+
+.btn-primary:hover {
+  background: rgba(34, 211, 238, 0.2);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Карточки */
+.card {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  background: var(--color-bg-card-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Бейджи */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-accent {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(34, 211, 238, 0.1);
+}
+
+/* Прогресс бар */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-sm);
+  transition: width var(--transition-slow);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--color-accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--color-accent-glow), 0 0 30px var(--color-accent-glow);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-slow) ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--transition-slow) ease forwards;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}
+
+/* Telegram theme integration */
+.theme-light {
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-card: rgba(0, 0, 0, 0.05);
+  --color-bg-card-hover: rgba(0, 0, 0, 0.1);
+  --color-text-primary: #000000;
+  --color-text-secondary: rgba(0, 0, 0, 0.6);
+  --color-text-muted: rgba(0, 0, 0, 0.4);
+}
