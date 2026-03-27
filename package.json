@@ -1,0 +1,49 @@
+{
+  "name": "telegram-saas-bot-builder",
+  "version": "1.0.0",
+  "description": "Telegram SaaS Bot Builder + Sales Funnel - Конструктор ботов для бизнеса",
+  "main": "dist/bot/index.js",
+  "scripts": {
+    "dev": "tsx bot/index.ts",
+    "build": "tsc",
+    "start": "node dist/bot/index.js",
+    "dev:mini-app": "cd mini-app && npm run dev",
+    "build:mini-app": "cd mini-app && npm run build",
+    "setup:webhook": "tsx config/webhook.ts",
+    "setup:vercel-webhook": "node scripts/setup-vercel-webhook.js",
+    "db:migrate": "node scripts/migrate-supabase.js",
+    "db:migrate:manual": "echo 'Скопируйте SQL из database/supabase-migration.sql в Supabase SQL Editor'",
+    "vercel:build": "npm run build && npm run build:mini-app",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "saas",
+    "builder",
+    "mini-app"
+  ],
+  "author": "Foxampy",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.100.1",
+    "dayjs": "^1.11.11",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-telegram-bot-api": "^0.64.0",
+    "pg": "^8.11.5",
+    "telegraf": "^4.16.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.12",
+    "@types/node-telegram-bot-api": "^0.64.5",
+    "@types/pg": "^8.11.6",
+    "@types/uuid": "^9.0.8",
+    "@vercel/node": "^3.0.0",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5",
+    "vercel": "^34.0.0"
+  }
+}
